@@ -1,0 +1,55 @@
+<div class="prose prose-invert">
+  <h1>Transition</h1>
+</div>
+
+<div id="demo" class="prose prose-invert mt-4 mb-6">
+  <p class="text-base/7">Display any content in a panel (portaled or not) with a accessiblility concerns already handled.</p>
+</div>
+
+<div class="relative flex flex-col items-center justify-center h-[400px]">
+  <%= render Headless::Tab::GroupComponent.new(class: "flex h-full w-full") do |tab_group| %>
+    <%= tab_group.with_tab_list(class: "flex gap-4 absolute top-0 right-0 z-10 bg-zinc-900 rounded-full") do |tab_list| %>
+      <%= tab_group.with_tab(class: "rounded-full py-1 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[selected]:bg-white/10 data-[hover]:bg-white/5 data-[selected]:data-[hover]:bg-white/10 data-[focus]:outline-1 data-[focus]:outline-white") do |tab| %>
+        Preview
+      <% end %>
+      <%= tab_group.with_tab(class: "rounded-full py-1 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[selected]:bg-white/10 data-[hover]:bg-white/5 data-[selected]:data-[hover]:bg-white/10 data-[focus]:outline-1 data-[focus]:outline-white") do |tab| %>
+        Code
+      <% end %>
+    <% end %>
+    <%= tab_group.with_panels(class: "h-full w-full") do |tab_panels| %>
+      <%= tab_group.with_tab_panel(class: "mt-3 h-full w-full") do |tab_panel| %>
+        <div class="relative h-full bg-white/5">
+          <div class="absolute inset-[35%] block rounded-full bg-white/15 blur-2xl"></div>
+          <div class="pt-30 flex flex-col items-center" data-controller="headless--transition">
+            <div class="size-[6.25rem]">
+              <div
+                data-headless--transition-target="child"
+                class="
+                  size-full rounded-xl bg-white shadow-lg transition duration-400 data-closed:scale-50 data-closed:rotate-[-120deg]
+                  data-closed:opacity-0 data-leave:duration-200 data-leave:ease-in-out data-leave:data-closed:scale-95
+                  data-leave:data-closed:rotate-[0deg]
+                "
+              >
+              </div>
+            </div>
+            <%= render Headless::ButtonComponent.new(as: :button, class: "mt-10 flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-sm/6 font-semibold text-white transition data-hover:scale-105 data-hover:bg-white/15", data: { action: "headless--transition#toggle headless--transition#toggle" }) do %>
+              <%= heroicon "arrow-path", variant: "micro", class: "size-4 fill-white/50" %>
+              <span>Click to transition</span>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <%= tab_group.with_tab_panel(class: "mt-3 h-full w-full") do |tab_panel| %>
+        <div class="h-full w-full overflow-auto flex flex-row">
+          <div class="flex-grow">
+            <%= render_markdown(File.read("app/views/docs/transition/_demo_example.md")) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="prose prose-invert mt-8">
+  <%= render_markdown(File.read("app/views/docs/_transition.md")) %>
+</div>

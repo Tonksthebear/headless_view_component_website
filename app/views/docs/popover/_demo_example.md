@@ -1,36 +1,30 @@
 ```erb
-<%= render Headless::MenuComponent.new(class: "absolute top-24 w-52 text-right") do |menu| %>
-  <%= menu.with_button(class: "inline-flex items-center gap-2 rounded-md bg-zinc-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-zinc-700 data-[open]:bg-zinc-700 data-[focus]:outline-1 data-[focus]:outline-white") do |button| %>
-    Options
-    <%= button.with_icon "chevron-down", class: "size-4 fill-white/60" %>
+<%= render Headless::PopoverComponent.new(open: true) do |popover| %>
+  <%= popover.with_button(class: "block text-sm/6 font-semibold text-white/50 data-[active]:text-white data-[hover]:text-white data-[focus]:outline-1 data-[focus]:outline-white") do %>
+    Solutions
   <% end %>
 
-  <%= menu.with_items(anchor: "bottom end", class: "w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0") do |items| %>
-    <%= items.with_item_button(class: "group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10") do |item| %>
-      <%= item.with_icon "pencil", class: "size-4 fill-white/30" %>
-      Edit
-      <span class="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">⌘E</span>
-    <% end %>
-
-    <%= items.with_item_button(class: "group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10") do |item| %>
-      <%= item.with_icon "document-duplicate", class: "size-4 fill-white/30" %>
-      Duplicate
-      <span class="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">⌘D</span>
-    <% end %>
-
-    <%# items.with_separator %>
-
-    <%= items.with_item_button(class: "group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10") do |item| %>
-      <%= item.with_icon "archive-box", class: "size-4 fill-white/30" %>
-      Archive
-      <span class="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">⌘A</span>
-    <% end %>
-
-    <%= items.with_item_button(class: "group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10") do |item| %>
-      <%= item.with_icon "trash", class: "size-4 fill-white/30" %>
-      Delete
-      <span class="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">⌘T</span>
-    <% end %>
+  <%= popover.with_panel(anchor: "bottom", class: "divide-y divide-white/5 rounded-xl bg-white/5 text-sm/6 transition duration-200 ease-in-out [--anchor-gap:calc(var(--spacing)*5)] data-[closed]:-translate-y-1 data-[closed]:opacity-0") do %>
+    <div class="p-3">
+      <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5 focus:bg-white/5" href="#">
+        <p class="font-semibold text-white">Insights</p>
+        <p class="text-white/50">Measure actions your users take</p>
+      </a>
+      <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5 focus:bg-white/5" href="#">
+        <p class="font-semibold text-white">Automations</p>
+        <p class="text-white/50">Create your own targeted content</p>
+      </a>
+      <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5 focus:bg-white/5" href="#">
+        <p class="font-semibold text-white">Reports</p>
+        <p class="text-white/50">Keep track of your growth</p>
+      </a>
+    </div>
+    <div class="p-3">
+      <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5 focus:bg-white/5" href="#">
+        <p class="font-semibold text-white">Documentation</p>
+        <p class="text-white/50">Start integrating products and tools</p>
+      </a>
+    </div>
   <% end %>
 <% end %>
 ```

@@ -1,0 +1,70 @@
+<div class="prose prose-invert">
+  <h1>Combobox</h1>
+</div>
+
+<div id="demo" class="prose prose-invert mt-4 mb-6">
+  <p class="text-base/7">Display any content in a panel (portaled or not) with a accessiblility concerns already handled.</p>
+</div>
+
+<div class="relative flex flex-col items-center justify-center h-[400px]">
+  <%= render Headless::Tab::GroupComponent.new(class: "flex h-full w-full") do |tab_group| %>
+    <%= tab_group.with_tab_list(class: "flex gap-4 absolute top-0 right-0 z-10 bg-zinc-900 rounded-full") do |tab_list| %>
+      <%= tab_group.with_tab(class: "rounded-full py-1 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[selected]:bg-white/10 data-[hover]:bg-white/5 data-[selected]:data-[hover]:bg-white/10 data-[focus]:outline-1 data-[focus]:outline-white") do |tab| %>
+        Preview
+      <% end %>
+      <%= tab_group.with_tab(class: "rounded-full py-1 px-3 text-sm/6 font-semibold text-white focus:outline-none data-[selected]:bg-white/10 data-[hover]:bg-white/5 data-[selected]:data-[hover]:bg-white/10 data-[focus]:outline-1 data-[focus]:outline-white") do |tab| %>
+        Code
+      <% end %>
+    <% end %>
+    <%= tab_group.with_panels(class: "h-full w-full") do |tab_panels| %>
+      <%= tab_group.with_tab_panel(class: "mt-3 h-full w-full") do |tab_panel| %>
+        <div class="relative h-full bg-white/5">
+          <div class="absolute inset-[35%] block rounded-full bg-white/15 blur-2xl"></div>
+          <div class="mx-auto h-screen w-52 pt-20">
+            <%= render Headless::ComboboxComponent.new(immediate: true, default_values: [2]) do |combobox| %>
+              <%= combobox.with_filter do %>
+                this.filteredOptions = this.query === '' ? this.options : this.options.filter((option) => { return
+                option.dataset.displayValue.toLowerCase().includes(this.query.toLowerCase()) }).sort((a, b) =>
+                a.dataset.displayValue.localeCompare(b.dataset.displayValue))
+              <% end %>
+              <div class="relative">
+                <%= combobox.with_input(class: "w-full rounded-lg border-none bg-white/5 py-1.5 pr-8 pl-3 text-sm/6 text-white") %>
+                <%= combobox.with_button(class: "group absolute inset-y-0 right-0 px-2.5") do %>
+                  <%= heroicon("chevron-down", class: "size-4 fill-white/60 group-data-[hover]:fill-white") %>
+                <% end %>
+              </div>
+              <%= combobox.with_options_container(class: "w-[var(--input-width)] rounded-xl border border-white/5 bg-white/5 p-1 [--anchor-gap:--spacing(1)] empty:invisible transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0 flex flex-col") do %>
+                <%= combobox.with_option(class: "group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-white/10") do %>
+                  <%= heroicon("check", variant: "micro", class: "invisible size-4 fill-white group-data-[selected]:visible") %>
+                  <div class="text-sm/6 text-white">
+                    Create
+                    <span class="font-bold">"{query}"</span>
+                  </div>
+                <% end %>
+                <% @people.each do |option| %>
+                  <%= combobox.with_option(value: option[:id], display_value: option[:name], class: "group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-white/10") do %>
+                    <%= heroicon("check", variant: "micro", class: "invisible size-4 fill-white group-data-[selected]:visible") %>
+                    <div class="text-sm/6 text-white">
+                      <%= option[:name] %>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <%= tab_group.with_tab_panel(class: "mt-3 h-full w-full") do |tab_panel| %>
+        <div class="h-full w-full overflow-auto flex flex-row">
+          <div class="flex-grow">
+            <%= render_markdown(File.read("app/views/docs/combobox/_demo_example.md")) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="prose prose-invert mt-8">
+  <%= render_markdown(File.read("app/views/docs/_combobox.md")) %>
+</div>
