@@ -25,8 +25,20 @@
   <body class="relative min-h-full antialiased">
     <div class="[color-scheme:dark]">
       <div class="relative">
-        <div class="bg-orange-950 absolute inset-0 -z-10 bg-[35%_top] bg-no-repeat sm:bg-[38%_top] md:bg-[40%_top] lg:bg-[44%_top] xl:bg-top forced-colors:hidden" aria-hidden="true"></div>
-        <div class="absolute inset-0 -z-10 bg-[35%_bottom] bg-no-repeat mix-blend-screen sm:bg-[38%_bottom] md:bg-[40%_bottom] lg:bg-[44%_bottom] xl:bg-bottom forced-colors:hidden" aria-hidden="true"></div>
+        <div
+          class="
+            bg-blue-800 absolute inset-0 -z-10 bg-[35%_top] bg-no-repeat sm:bg-[38%_top] md:bg-[40%_top] lg:bg-[44%_top] xl:bg-top
+            forced-colors:hidden
+          "
+          aria-hidden="true"
+        ></div>
+        <div
+          class="
+            absolute inset-0 -z-10 bg-[35%_bottom] bg-no-repeat mix-blend-screen sm:bg-[38%_bottom] md:bg-[40%_bottom]
+            lg:bg-[44%_bottom] xl:bg-bottom forced-colors:hidden
+          "
+          aria-hidden="true"
+        ></div>
         <div class="pointer-events-none absolute inset-0 z-10 px-4 sm:px-6" aria-hidden="true">
           <div class="mx-auto flex h-full max-w-[calc(var(--container-7xl)+2px)] gap-[14px]">
             <div class="flex-1 border-x border-white/[7.5%]"></div>
@@ -35,7 +47,7 @@
           </div>
         </div>
         <div class="absolute inset-0 -z-10 opacity-10 forced-colors:hidden bg-black" aria-hidden="true"></div>
-        
+
         <%= yield %>
       </div>
     </div>

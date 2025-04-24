@@ -41,6 +41,8 @@ gem "thruster", require: false
 
 gem "headless-components-rails", git: "https://github.com/Tonksthebear/headless-components-rails.git"
 gem "view_component"
+gem "erb-formatter"
+gem "commonmarker"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

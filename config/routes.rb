@@ -14,8 +14,22 @@ Rails.application.routes.draw do
 
   # Documentation routes
   get "/docs/dropdown", to: "docs#dropdown"
-  get "/docs/dialog", to: "docs#dialog"
   get "/docs/disclosure", to: "docs#disclosure"
+  get "/docs/dialog", to: "docs#dialog"
+  get "/docs/popover", to: "docs#popover"
   get "/docs/tabs", to: "docs#tabs"
+  get "/docs/transition", to: "docs#transition"
+  get "/docs/button", to: "docs#button"
+  get "/docs/checkbox", to: "docs#checkbox"
+  get "/docs/combobox", to: "docs#combobox"
+  get "/docs/fieldset", to: "docs#fieldset"
+  get "/docs/input", to: "docs#input"
+  get "/docs/listbox", to: "docs#listbox"
+  get "/docs/radio-group", to: "docs#radio_group"
+  get "/docs/select", to: "docs#select"
   get "/docs/switch", to: "docs#switch"
+  get "/docs/textarea", to: "docs#textarea"
+
+  get "/about", to: "home#about"
+  get "/implementation", to: "home#implementation"
 end

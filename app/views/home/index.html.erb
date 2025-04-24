@@ -1,8 +1,18 @@
 <div class="border-t border-white/[7.5%] px-4 sm:px-6">
   <div class="mx-auto max-w-7xl px-2 py-16 lg:py-24">
-    <h1 class="text-2xl font-semibold tracking-tight text-balance text-white sm:text-[length:clamp(2rem,3.75vw,3rem)]/tight">
-      Completely unstyled, fully accessible UI components, designed to mimic HeadlessUI but with Rails View Components and Stimulus JS.
+    <h1
+      class="
+        text-2xl font-semibold tracking-tight text-balance text-white sm:text-[length:clamp(2rem,3.75vw,3rem)]/tight
+      "
+    >
+      Completely unstyled, fully accessible UI components, designed to mimic HeadlessUI but with Rails View Components
+      and Stimulus JS.
     </h1>
+    <div class="flex flex-col sm:flex-row gap-1 sm:gap-3 prose prose-invert">
+      <%= link_to "Read more about what this means", "/about", class: "text-xl" %>
+      or
+      <%= link_to "See the implementation details", "/implementation", class: "text-xl" %>
+    </div>
   </div>
 </div>
 
@@ -19,100 +29,99 @@
         <%= render ComponentCard.new(
           title: "Dropdown Menu",
           href: "/docs/dropdown") do %>
-            <%= render "components/previews/dropdown" %>
-          <% end %>
+          <%= render "components/previews/dropdown" %>
+        <% end %>
 
         <%= render ComponentCard.new(
           title: "Disclosure",
           href: "/docs/disclosure") do %>
-            <%= render "components/previews/disclosure" %>
+          <%= render "components/previews/disclosure" %>
         <% end %>
 
         <%= render ComponentCard.new(
           title: "Dialog",
           href: "/docs/dialog") do %>
-            <%= render "components/previews/dialog" %>
-          <% end %>
+          <%= render "components/previews/dialog" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Popover",
           href: "/docs/popover") do %>
-            <%= render "components/previews/popover" %>
-          <% end %>
+          <%= render "components/previews/popover" %>
+        <% end %>
 
         <%= render ComponentCard.new(
           title: "Tabs",
           href: "/docs/tabs") do %>
-            <%= render "components/previews/tabs" %>
-          <% end %>
+          <%= render "components/previews/tabs" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Transition",
           href: "/docs/transition") do %>
-            <%= render "components/previews/transition" %>
-          <% end %>
+          <%= render "components/previews/transition" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Button",
           href: "/docs/button") do %>
-            <%= render "components/previews/button" %>
-          <% end %>
+          <%= render "components/previews/button" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Checkbox",
           href: "/docs/checkbox") do %>
-            <%= render "components/previews/checkbox" %>
-          <% end %>
+          <%= render "components/previews/checkbox" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Combobox",
           href: "/docs/combobox") do %>
-            <%= render "components/previews/combobox" %>
-          <% end %>
+          <%= render "components/previews/combobox" %>
+        <% end %>
 
         <%= render ComponentCard.new(
           title: "Fieldset",
           href: "/docs/fieldset") do %>
-            <%= render "components/previews/fieldset" %>
-          <% end %>
+          <%= render "components/previews/fieldset" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Input",
           href: "/docs/input") do %>
-            <%= render "components/previews/input" %>
-          <% end %>
+          <%= render "components/previews/input" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Listbox",
           href: "/docs/listbox") do %>
-            <%= render "components/previews/listbox" %>
-          <% end %>
+          <%= render "components/previews/listbox" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Radio Group",
           href: "/docs/radio-group") do %>
-            <%= render "components/previews/radio_group" %>
-          <% end %>
+          <%= render "components/previews/radio_group" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Select",
           href: "/docs/select") do %>
-            <%= render "components/previews/select" %>
-          <% end %>
-
+          <%= render "components/previews/select" %>
+        <% end %>
 
         <%= render ComponentCard.new(
           title: "Switch",
           href: "/docs/switch") do %>
-            <%= render "components/previews/switch" %>
-          <% end %>
+          <%= render "components/previews/switch" %>
+        <% end %>
 
-                  <%= render ComponentCard.new(
+        <%= render ComponentCard.new(
           title: "Textarea",
           href: "/docs/textarea") do %>
-            <%= render "components/previews/textarea" %>
-          <% end %>
+          <%= render "components/previews/textarea" %>
+        <% end %>
       </div>
     </div>
   </div>
-</main> 
+</main>

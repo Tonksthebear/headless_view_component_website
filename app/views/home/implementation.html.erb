@@ -1,0 +1,22 @@
+<div class="border-t border-white/[7.5%] px-4 sm:px-6">
+  <div class="mx-auto max-w-7xl px-2 py-16 lg:py-24">
+    <h1
+      class="
+        text-2xl font-semibold tracking-tight text-balance text-white sm:text-[length:clamp(2rem,3.75vw,3rem)]/tight
+      "
+    >
+      Implementation
+    </h1>
+    <div class="flex flex-col sm:flex-row gap-1 sm:gap-3 prose prose-invert">
+      <%= link_to "Components", "/", class: "text-xl" %>
+      or
+      <%= link_to "Read more about what this means", "/about", class: "text-xl" %>
+    </div>
+  </div>
+</div>
+
+<main class="rounded-[2.5rem] bg-black/80 px-4 pb-12 sm:px-6">
+  <div class="pt-24 mx-auto prose prose-invert">
+    <%= render_markdown(File.read("app/views/home/_implementation.md")) %>
+  </div>
+</main>
