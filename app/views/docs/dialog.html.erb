@@ -1,0 +1,78 @@
+<% content_for :docs_content do %>
+  <h2 class="text-xl font-semibold text-white" id="installation">Installation</h2>
+  <div class="mt-4 rounded-lg bg-white/5 p-4">
+    <pre class="text-sm text-white"><code>gem 'headless-components-rails'</code></pre>
+  </div>
+
+  <h2 class="mt-10 text-xl font-semibold text-white" id="basic-usage">Basic Usage</h2>
+  <div class="mt-4 rounded-lg bg-white/5 p-4">
+    <pre class="text-sm text-white"><code>&lt;%= render HeadlessComponents::Dialog.new do |d| %>
+  &lt;%= d.button do %>
+    Open Dialog
+  &lt;% end %>
+
+  &lt;%= d.content do %>
+    &lt;%= d.title do %>
+      Payment successful
+    &lt;% end %>
+    &lt;%= d.description do %>
+      We've sent you an email with all of the details of your order.
+    &lt;% end %>
+    &lt;%= d.footer do %>
+      &lt;%= d.button(variant: :primary) { "Got it, thanks!" } %>
+    &lt;% end %>
+  &lt;% end %>
+&lt;% end %></code></pre>
+  </div>
+
+  <h2 class="mt-10 text-xl font-semibold text-white" id="live-example">Live Example</h2>
+  <div class="mt-4">
+    <%= render HeadlessComponents::Dialog.new do |d| %>
+      <%= d.button do %>
+        Open Dialog
+      <% end %>
+
+      <%= d.content do %>
+        <%= d.title do %>
+          Payment successful
+        <% end %>
+        <%= d.description do %>
+          We've sent you an email with all of the details of your order.
+        <% end %>
+        <%= d.footer do %>
+          <%= d.button(variant: :primary) { "Got it, thanks!" } %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h2 class="mt-10 text-xl font-semibold text-white" id="props">Props</h2>
+  <div class="mt-4">
+    <table class="w-full text-left text-sm text-white">
+      <thead>
+        <tr class="border-b border-white/10">
+          <th class="py-2 font-semibold">Prop</th>
+          <th class="py-2 font-semibold">Type</th>
+          <th class="py-2 font-semibold">Default</th>
+          <th class="py-2 font-semibold">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-white/5">
+          <td class="py-2 font-mono">size</td>
+          <td class="py-2">:sm, :md, :lg, :xl, :2xl, :full</td>
+          <td class="py-2">:md</td>
+          <td class="py-2">Size of the dialog panel</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-2 font-mono">static</td>
+          <td class="py-2">Boolean</td>
+          <td class="py-2">false</td>
+          <td class="py-2">Whether the dialog should be static (not closeable by clicking outside or pressing escape)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<%= render 'layout' %> 

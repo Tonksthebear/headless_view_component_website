@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+
+@source inline("!hidden");
+@plugin "@tailwindcss/typography"

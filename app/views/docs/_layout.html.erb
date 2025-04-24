@@ -1,0 +1,39 @@
+<div class="border-t border-white/[7.5%] px-4 sm:px-6">
+  <div class="mx-auto max-w-7xl px-2 py-16">
+    <h1 class="text-3xl font-bold tracking-tight text-white"><%= @component %></h1>
+    <p class="mt-4 text-lg text-white/60"><%= @description %></p>
+  </div>
+</div>
+
+<main class="relative px-4 pb-16 sm:px-6 lg:pb-20">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3">
+      <div class="col-span-2">
+        <div class="prose prose-white">
+          <%= content_for(:docs_content) %>
+        </div>
+      </div>
+
+      <div class="lg:col-span-1">
+        <div class="sticky top-4">
+          <nav class="text-sm" aria-label="Table of contents">
+            <ul class="space-y-3">
+              <li>
+                <a href="#installation" class="text-white/60 hover:text-white">Installation</a>
+              </li>
+              <li>
+                <a href="#basic-usage" class="text-white/60 hover:text-white">Basic Usage</a>
+              </li>
+              <li>
+                <a href="#live-example" class="text-white/60 hover:text-white">Live Example</a>
+              </li>
+              <li>
+                <a href="#props" class="text-white/60 hover:text-white">Props</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</main> 
