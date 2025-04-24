@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/Tonksthebear/headless-components-rails.git
-  revision: be4247652d4ccfc4312928af16b5040b9d3f4d73
+  revision: f64923e5a98a203bd5b4ff6b7e421e6a555af0d8
   specs:
-    headless-components-rails (0.5.0)
+    headless-components-rails (0.5.2)
       classy-yaml (>= 1.4)
       importmap-rails
       mini_racer

@@ -39,7 +39,7 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
-gem "headless-components-rails", git: "https://github.com/Tonksthebear/headless-components-rails.git"
+gem "headless-components-rails", git: "https://github.com/Tonksthebear/headless-components-rails.git", 
 gem "view_component"
 gem "erb-formatter"
 gem "commonmarker"
