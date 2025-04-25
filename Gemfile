@@ -39,9 +39,8 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
-gem "headless-components-rails", git: "https://github.com/Tonksthebear/headless-components-rails.git", 
+gem "headless-components-rails", git: "https://github.com/Tonksthebear/headless-components-rails.git"
 gem "view_component"
-gem "erb-formatter"
 gem "commonmarker"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
@@ -56,6 +55,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "erb-formatter"
 end
 
 group :development do
